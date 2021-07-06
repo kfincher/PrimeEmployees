@@ -19,6 +19,7 @@ public with sharing class EmployeeTriggerHelper {
             if(!IDSet.contains(returnVal))
                 break;
         }
+        System.debug(LoggingLevel.ERROR,returnVal);
         return returnVal;
     }
 }
