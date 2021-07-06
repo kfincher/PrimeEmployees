@@ -1,4 +1,7 @@
 public with sharing class PrimeClass {
+    public static Boolean CheckPrime(Decimal val) {
+        return CheckPrime(Integer.valueOf(val));
+    }
     public static Boolean CheckPrime(Integer val) {
         if(Math.mod(val,2)==0)
             return false;
