@@ -21,7 +21,7 @@
             	component.set("v.Size",rows.length);
             
                 var listSize = component.get("v.DisplaySize");
-                var rowCols = new Array(Math.floor(rows.length/listSize)+1);
+                var rowCols = new Array(Math.floor((rows.length-1)/listSize)+1);
                 for(var i = 0;i<rowCols.length;i++){
                     rowCols[i]= new Array();
                     for(var j = 0; j<listSize;j++){

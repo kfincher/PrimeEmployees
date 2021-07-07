@@ -25,18 +25,17 @@
         <div class="slds-form-element slds-lookup slds-m-left_medium slds-m-top_medium" data-select="single">
             <div class="slds-form-element__control">
                 <div class="slds-input-has-icon slds-input-has-icon--right slds-m-bottom_x-small">
-                    <!--<lightning:buttonIcon iconName="utility:search" variant="bare" onclick="{! c.myAction }" alternativeText="Search" class="slds-input__icon" />-->
                     <div class="slds-grid" style="height:30px">
                         Name Search:
                         <lightning:input variant="label-inline" value="{!v.SearchValue}" class="slds-p-around_none slds-size_1-of-6 slds-m-right_x-small"  placeholder="" />
-                        <lightning:button label="Search" class="slds-m-right_small" title="Search" onclick="{! c.myAction }"/>
+                        <lightning:button label="Search" class="slds-m-right_small slds-button_outline-brand" title="Search" onclick="{! c.myAction }"/>
                         
-                        <lightning:button label="Previous" disabled="{!v.prevOn}" class="slds-m-right_small slds-button_neutral" title="Previous" onclick="{! c.prevList }"/>
-                        <lightning:button label="Next" disabled="{!v.nextOn}" class="slds-m-right_small" title="Next" onclick="{! c.nextList }"/>
+                        <lightning:button label="Previous" disabled="{!v.prevOn}" class="slds-m-right_small slds-button_outline-brand" title="Previous" onclick="{! c.prevList }"/>
+                        <lightning:button label="Next" disabled="{!v.nextOn}" class="slds-m-right_small slds-button_outline-brand" title="Next" onclick="{! c.nextList }"/>
                         
-                        <lightning:button label="Create Records" class="slds-m-right_small slds-button_neutral" title="Create Records" onclick="{! c.createRecords }"/>
-                        <lightning:button label="Delete All" class="slds-m-right_small slds-button_neutral" title="Delete All" onclick="{! c.deleteRecords }"/>
-                        <div id="ResultsDisplay"/>
+                        <lightning:button label="Create Records" class="slds-m-right_small slds-button_outline-brand" title="Create Records" onclick="{! c.createRecords }"/>
+                        <lightning:button label="Delete All" class="slds-m-right_small slds-button_outline-brand" title="Delete All" onclick="{! c.deleteRecords }"/>
+                        <div id="ResultsDisplay" style="margin-top: auto;margin-bottom: auto;"/>
                     </div>
                 </div>
             </div>
