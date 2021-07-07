@@ -1,9 +1,5 @@
 @isTest
 public with sharing class EmployeeTriggerTest {
-    @TestSetup
-    static void makeData(){
-        
-    }
 
     @isTest
     private static void Positive() {

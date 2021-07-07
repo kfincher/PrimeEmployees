@@ -1,3 +1,4 @@
+@testVisible
 public class EmployeeDataFactory implements Database.Batchable<sObject> {
     public List<Employee__c> empList;
     

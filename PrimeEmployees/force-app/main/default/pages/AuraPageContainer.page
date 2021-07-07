@@ -1,0 +1,18 @@
+<apex:page >
+    <apex:includeLightning />
+    <div id="Con" />
+    
+    <script>
+        $Lightning.use("c:auraHarnessApp", function() {
+            $Lightning.createComponent(
+                "c:MainAuraComponent",
+                "",
+                "Con",
+                function(cmp) {
+                    console.log("Component is created!");
+            	}
+            );
+        });        
+    </script>
+    
+</apex:page>

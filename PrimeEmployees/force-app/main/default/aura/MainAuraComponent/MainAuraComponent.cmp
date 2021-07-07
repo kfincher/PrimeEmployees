@@ -1,0 +1,49 @@
+<aura:component controller="EmployeeController">
+    <aura:attribute name="Columns" type="List"/>
+    <aura:attribute name="EmployeeBatch" type="List"/>
+    <aura:attribute name="Employees" type="List"/>
+    <aura:attribute name="Size" type="Integer"/>
+    <aura:attribute name="DisplaySize" type="Integer" default="20"/>
+    <aura:attribute name="rowCols" type="List"/>
+     <aura:attribute name="SearchValue" type="String" />
+    <aura:attribute name="prevOn" type="Boolean" default="true"/>
+    <aura:attribute name="nextOn" type="Boolean" default="true"/>
+    
+    <aura:attribute name="listIndex" type="Integer"/>
+    <aura:attribute name="selectedValue" type="String"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+   
+    <div class="slds-m-left_medium">
+    <lightning:select name="filterId" label="Filter:" aura:id="filterId" value="{!v.selectedValue}">
+		<option value="null">All</option>
+		<option value="true">Special</option>
+        <option value="false">Non-special</option>
+    </lightning:select>
+    </div>
+    <div id="SearchMove">
+        <div class="slds-form-element slds-lookup slds-m-left_medium slds-m-top_medium" data-select="single">
+            <div class="slds-form-element__control">
+                <div class="slds-input-has-icon slds-input-has-icon--right slds-m-bottom_x-small">
+                    <!--<lightning:buttonIcon iconName="utility:search" variant="bare" onclick="{! c.myAction }" alternativeText="Search" class="slds-input__icon" />-->
+                    <div class="slds-grid" style="height:30px">
+                        Name Search:
+                        <lightning:input variant="label-inline" value="{!v.SearchValue}" class="slds-p-around_none slds-size_1-of-6 slds-m-right_x-small"  placeholder="" />
+                        <lightning:button label="Search" class="slds-m-right_small" title="Search" onclick="{! c.myAction }"/>
+                        
+                        <lightning:button label="Previous" disabled="{!v.prevOn}" class="slds-m-right_small slds-button_neutral" title="Previous" onclick="{! c.prevList }"/>
+                        <lightning:button label="Next" disabled="{!v.nextOn}" class="slds-m-right_small" title="Next" onclick="{! c.nextList }"/>
+                        
+                        <lightning:button label="Create Records" class="slds-m-right_small slds-button_neutral" title="Create Records" onclick="{! c.createRecords }"/>
+                        <lightning:button label="Delete All" class="slds-m-right_small slds-button_neutral" title="Delete All" onclick="{! c.deleteRecords }"/>
+                        <div id="ResultsDisplay"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <lightning:datatable aura:id="dataTable" keyField="id" data="{!v.EmployeeBatch}" columns="{!v.Columns}" hideCheckboxColumn="true"></lightning:datatable>
+    
+</aura:component>
