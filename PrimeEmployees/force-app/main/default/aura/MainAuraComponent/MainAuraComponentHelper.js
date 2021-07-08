@@ -9,9 +9,13 @@
 	},
 	dataLoad : function(component, event) {
 		var action = component.get("c.returnAuraList");
-            console.log(component.get("v.selectedValue"));
+            var valueSearch = component.get("v.SearchValue");
+            if(!valueSearch){
+            	valueSearch = "null";
+            	console.log('yup');
+            }
         action.setParams({
-            search : component.get("v.SearchValue"),
+            search : valueSearch,
             special : component.get("v.selectedValue")
         });
         action.setCallback(this,function(data){

@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
+        <members>APINameReturn</members>
+        <members>BatchEmployeeCreationFactory</members>
+        <members>EmployeeController</members>
+        <members>EmployeeDataFactory</members>
+        <members>EmployeeDataFactoryTest</members>
+        <members>EmployeeDeletionFactory</members>
+        <members>EmployeeEditor</members>
+        <members>EmployeeTriggerHelper</members>
+        <members>EmployeeTriggerTest</members>
+        <members>PrimeClass</members>
+        <members>PrimeClassTest</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexComponent</name>
-    </types>
-    <types>
-        <members>*</members>
+        <members>MainVisualforcePage</members>
         <name>ApexPage</name>
     </types>
     <types>
@@ -21,7 +27,10 @@
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>*</members>
+        <members>MainAuraComponent</members>
+        <members>VisualforcePageApplication</members>
+        <members>auraHarnessApp</members>
+        <members>VisualforcePageComponentContainer</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
@@ -31,10 +40,6 @@
     <types>
         <members>*</members>
         <name>LightningComponentBundle</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>StaticResource</name>
     </types>
     <version>52.0</version>
 </Package>

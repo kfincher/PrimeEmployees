@@ -1,5 +1,5 @@
 @testVisible
-public class EmployeeDataFactory implements Database.Batchable<sObject> {
+public class EmployeeDataFactory implements Database.Batchable<sObject>, Database.AllowsCallouts {
     public List<Employee__c> empList;
     
     public EmployeeDataFactory(list<Employee__c>emp){
@@ -11,6 +11,9 @@ public class EmployeeDataFactory implements Database.Batchable<sObject> {
         return empList;
     }
     public void execute(Database.BatchableContext bc, List<Employee__c> records){
+        for(Employee__c emp : records){
+            emp.Name=APINameReturn.main();
+        }
         insert records;
     }
     public void finish(Database.BatchableContext bc){}
